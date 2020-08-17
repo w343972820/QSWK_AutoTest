@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/QSWK_API_Test/QSWK_API_Test.iml" filepath="$PROJECT_DIR$/QSWK_API_Test/QSWK_API_Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/QSWK_AutoTest.iml" filepath="$PROJECT_DIR$/.idea/QSWK_AutoTest.iml" />
+    </modules>
+  </component>
+</project>
