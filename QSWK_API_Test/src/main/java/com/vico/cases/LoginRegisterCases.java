@@ -24,12 +24,12 @@ public class LoginRegisterCases {
         client = new PostHttpClient();
     }
     @Test
-    public void lgoin() throws IOException {
+    public void login() throws IOException {
         String resultCode = getLogin();
         JSONObject resultJson=JSONObject.parseObject(resultCode);
         String code = resultJson.getString("code");
         Reporter.log("登录请求,只测接口是否响应,不做滑块处理,.");
-        Assert.assertEquals("1000",code);
+        Assert.assertEquals("2050",code);
     }
     @Test
     public void register() throws IOException {
@@ -37,7 +37,7 @@ public class LoginRegisterCases {
         JSONObject resultJson=JSONObject.parseObject(resultCode);
         String code = resultJson.getString("code");
         Reporter.log("注册请求,只测接口是否响应,不做滑块处理,.");
-        Assert.assertEquals("1000",code);
+        Assert.assertEquals("2050",code);
     }
 
     public String getRegister() throws IOException {

@@ -9,13 +9,6 @@ import java.util.ResourceBundle;
 
 public class ConfigFile {
     private static ResourceBundle bundle=ResourceBundle.getBundle("application");
-    static {
-        try {
-            TestConfig.sqlSession = DataBaseUtil.getSqlSession();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     /*
     * 传入接口URI,返回接链接
     * */
@@ -33,6 +26,27 @@ public class ConfigFile {
         }
         if (interFaceName==InterFaceName.Register){
             uri=bundle.getString("test.Register.uri");
+        }
+        if (interFaceName==InterFaceName.getCloudPackagelist){
+            uri=bundle.getString("test.getCloudPackagelist.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudMinerParam){
+            uri=bundle.getString("test.selectCloudMinerParam.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudShopDetail){
+            uri=bundle.getString("test.selectCloudShopDetail.uri");
+        }
+        if (interFaceName==InterFaceName.buyCloudOrder){
+            uri=bundle.getString("test.buyCloudOrder.uri");
+        }
+        if (interFaceName==InterFaceName.userAlreadyPay){
+            uri=bundle.getString("test.userAlreadyPay.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudOrderList){
+            uri=bundle.getString("test.selectCloudOrderList.uri");
+        }
+        if (interFaceName==InterFaceName.orderpayafter){
+            uri=bundle.getString("test.orderpayafter.uri");
         }
         return address+uri;
     }

@@ -22,6 +22,6 @@
     </environments>
     <!-- 注册映射文件：java对象与数据库之间的xml文件路径! -->
     <mappers>
-        <mapper resource="mapper/LogincaseDao.xml"/>
+        <mapper resource="mapper/ShopGoodsDao.xml"/>
     </mappers>
 </configuration>

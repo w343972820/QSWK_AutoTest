@@ -5,7 +5,8 @@
         <classes>
             <class name="com.vico.cases.CommonInterFaceCases" />
             <class name="com.vico.cases.LoginRegisterCases" />
-
+            <class name="com.vico.cases.Books" />
+            <class name="com.vico.cases.PersonPowerListCases" />
         </classes>
     </test>
     <listeners>
