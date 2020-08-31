@@ -48,6 +48,27 @@ public class ConfigFile {
         if (interFaceName==InterFaceName.orderpayafter){
             uri=bundle.getString("test.orderpayafter.uri");
         }
+        if (interFaceName==InterFaceName.selectCloudFrontData){
+            uri=bundle.getString("test.selectCloudFrontData.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudProfitByCoin){
+            uri=bundle.getString("test.selectCloudProfitByCoin.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudOrderPayList){
+            uri=bundle.getString("test.selectCloudOrderPayList.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudOrderPayDetail){
+            uri=bundle.getString("test.selectCloudOrderPayDetail.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudOrderDetail){
+            uri=bundle.getString("test.selectCloudOrderDetail.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudProfitList){
+            uri=bundle.getString("test.selectCloudProfitList.uri");
+        }
+        if (interFaceName==InterFaceName.selectCloudOrderPayFenList){
+            uri=bundle.getString("test.selectCloudOrderPayFenList.uri");
+        }
         return address+uri;
     }
 

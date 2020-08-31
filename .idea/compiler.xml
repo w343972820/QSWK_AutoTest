@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="QSWK_API_Test" />
+        <module name="QSWK_Selenium" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="QSWK_API_Test" target="1.5" />
+      <module name="QSWK_Selenium" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

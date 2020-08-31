@@ -63,7 +63,6 @@ public class PersonPowerListCases {
             String orderno = orderListJson.getString("orderno");
             //判断是分期套餐或是不定期套餐,分期标识为:ci5，不定期为：cix
             if (pointname.contains("ci")) {
-                System.out.println(pointname + "->周期：" + cycleday + " 期数：" + mentnum + " 剩余天数：" + surday + " 当前期数：" + stagenum);
                 //判断是否可以续费，如果可以，则去续费
                 if (Integer.valueOf(stagenum) < Integer.valueOf(mentnum)) {
                     //去续费,续一期,bumyent为购买期数，paystages为分别是哪几期，如2，3，4
@@ -75,7 +74,6 @@ public class PersonPowerListCases {
                 //如果电费天数小于剩余天数，则表示能续电费
                 int bigDay=Integer.valueOf(surday)-Integer.valueOf(elecday);
                 if (Integer.valueOf(elecday)<Integer.valueOf(surday)){
-                    System.out.println(pointname + "->周期：" + cycleday + " 期数：" + mentnum + " 剩余天数：" + surday + " 当前期数：" + stagenum);
                     //随机续电费天数
                     goRenew(orderno, String.valueOf(CmmonMethod.suijishu(bigDay,1)),"1");
                 }

@@ -35,7 +35,7 @@ public class Books {
         TestConfig.client=new DefaultHttpClient();
         client = new PostHttpClient();
     }
-    @Test()
+    @Test(description = "下单购买套餐")
     public void getBookdsInfor() throws IOException, InterruptedException {
         List<ShopGoods> shopGoods = TestConfig.sqlSession.selectList("com.vico.dao.ShopGoodsDao.vicoqueryAll");
         for (int number=0;number<shopGoods.size();number++){

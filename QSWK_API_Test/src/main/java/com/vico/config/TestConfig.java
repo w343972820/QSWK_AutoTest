@@ -17,8 +17,15 @@ public class TestConfig {
     public static String selectCloudShopDetailUrl;
     public static String buyCloudOrder;
     public static String userAlreadyPay;
+    public static String selectCloudProfitByCoin;
+    public static String selectCloudFrontData;
     public static String selectCloudOrderList;
-    public static String token="dfa0670d-b3c3-4303-9660-338a4b2c1555";
+    public static String selectCloudOrderPayList;
+    public static String selectCloudOrderPayDetail;
+    public static String selectCloudOrderDetail;
+    public static String selectCloudProfitList;
+    public static String selectCloudOrderPayFenList;
+    public static String token="904f379d-906a-49ca-ab96-47cc0cf56d57";
     public static String userid="115063";
 
 }

@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/QSWK_API_Test/pom.xml" />
+        <option value="$PROJECT_DIR$/QSWK_Selenium/pom.xml" />
       </list>
     </option>
   </component>

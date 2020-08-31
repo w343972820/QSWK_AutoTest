@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/QSWK_API_Test/QSWK_API_Test.iml" filepath="$PROJECT_DIR$/QSWK_API_Test/QSWK_API_Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/QSWK_AutoTest.iml" filepath="$PROJECT_DIR$/.idea/QSWK_AutoTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QSWK_Selenium/QSWK_Selenium.iml" filepath="$PROJECT_DIR$/QSWK_Selenium/QSWK_Selenium.iml" />
     </modules>
   </component>
 </project>

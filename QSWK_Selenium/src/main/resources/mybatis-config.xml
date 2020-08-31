@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- XML配置文件包含对MyBatis系统的核心设置 -->
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC">
+            </transactionManager>
+            <dataSource type="POOLED">
+                <!-- 加载数据驱动 -->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <!-- 数据库连接地址 -->
+                <property name="url" value="jdbc:mysql://192.168.1.69:3307/test?serverTimezone=GMT"/>
+                <!-- 数据库账号 -->
+                <property name="username" value="root"/>
+                <!-- 数据库密码 -->
+                <property name="password" value="DEbZYnu8?KaCtZCZ"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 注册映射文件：java对象与数据库之间的xml文件路径! -->
+    <mappers>
+        <mapper resource="mapper/RoleUserDao.xml"/>
+    </mappers>
+</configuration>
