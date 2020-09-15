@@ -25,7 +25,14 @@ public class TestConfig {
     public static String selectCloudOrderDetail;
     public static String selectCloudProfitList;
     public static String selectCloudOrderPayFenList;
-    public static String token="904f379d-906a-49ca-ab96-47cc0cf56d57";
-    public static String userid="115063";
+    public static String token="10f74b71-5fa4-47c3-9446-ceaadb8db895";
+    public static String userid="115079";
+    public static String houTaiaddBulkProfitSendOld;
+    public static String userGoogleSeceret="O3D3XTYAUPHVQR5N";
+    public static String houTaiToken="9a884aa5-7852-45a4-8c4d-43149254d37e";
+    public static String houTaiLoginnum="www123456";
+    public static String selectCloudProfitSendByOrderno;
+    public static String checkProfitSendOld;
+
 
 }
