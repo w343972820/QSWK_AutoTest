@@ -30,12 +30,16 @@ public class PersonPowerListCases {
         TestConfig.client=new DefaultHttpClient();
         client = new PostHttpClient();
     }
-    @Test(enabled = true)
+    @Test(enabled = true,description = "续费订单")
     public void personPowerList() throws IOException, InterruptedException {
         //拿到用例数据后，访问接口，去拿接口返回结果
         String resultCode = getPersonPowerList();
         JSONObject resultJson=JSONObject.parseObject(resultCode);
         String code = resultJson.getString("code");
+        if (!code.equals("1000")){
+            Reporter.log("我的算力请求出错返回:"+resultCode);
+            System.out.println("我的算力请求请求出错返回:"+resultCode);
+        }
         Reporter.log("我的算力请求,响应 1000 即测试成功,否则测试失败.");
         Assert.assertEquals("1000",code);
         //拿到数据后,看有没需要续费的，进行续费
@@ -85,7 +89,7 @@ public class PersonPowerListCases {
         JSONObject param=new JSONObject();
         param.put("orderno",orderno);
         param.put("buyment",buyment);
-        param.put("cloudpayid","1");
+        param.put("cloudpayid",TestConfig.cloudpayid);
         param.put("paystages",paystages);
         param.put("userid",TestConfig.userid);
         param.put("languagetype","1");
@@ -96,6 +100,10 @@ public class PersonPowerListCases {
         JSONObject renewOrderJson=JSONObject.parseObject(result);
         //System.out.println(renewOrderJson.toString());
         String code=renewOrderJson.getString("code");
+        if (!code.equals("1000")){
+            Reporter.log("续费订单请求出错返回:"+result);
+            System.out.println("续费订单请求请求出错返回:"+result);
+        }
         Reporter.log("续费订单请求,响应 1000 即测试成功,否则测试失败.");
         Assert.assertEquals("1000",code);
         //找到确认订单号
@@ -104,6 +112,10 @@ public class PersonPowerListCases {
         //如果下单成功还得去确定购买
         String resureOrder = client.goSure(payno, TestConfig.userAlreadyPay);
         code=JSONObject.parseObject(resureOrder).getString("code");
+        if (!code.equals("1000")){
+            Reporter.log("确认订单请求出错返回:"+resureOrder);
+            System.out.println("确认订单请求请求出错返回:"+resureOrder);
+        }
         Reporter.log("确认订单请求,响应 1000 即测试成功,否则测试失败.");
         Assert.assertEquals("1000",code);
     }

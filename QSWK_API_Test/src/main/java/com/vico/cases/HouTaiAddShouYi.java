@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.vico.config.InterFaceName;
 import com.vico.config.TestConfig;
 import com.vico.service.ConfigFile;
+import com.vico.service.GetHouTaiToken;
 import com.vico.service.PostHttpClient;
 import com.vico.utils.GoogleYanZheng;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -19,26 +20,24 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AddShouYi {
+public class HouTaiAddShouYi {
     private PostHttpClient client;
     private String orderno;
     private String coins;
     @BeforeClass
-    public void addShouYiBefore(){
-        //现读取bundle有点问题，现写死
-        //TestConfig.houTaiaddBulkProfitSendOld= ConfigFile.getUrl(InterFaceName.houTaiaddBulkProfitSendOld);
-        //先写死
-        TestConfig.houTaiaddBulkProfitSendOld="http://14.152.106.55:61089/oreadm/admin/addBulkProfitSendOld";
-        TestConfig.selectCloudProfitSendByOrderno="http://14.152.106.55:61089/oreadm/admin/selectCloudProfitSendByOrderno";
-        TestConfig.checkProfitSendOld="http://14.152.106.55:61089/oreadm/admin/checkProfitSendOld";
+    public void addShouYiBefore() throws IOException {
+        TestConfig.houTaiaddBulkProfitSendOld=ConfigFile.getUrl(InterFaceName.houTaiaddBulkProfitSendOld);
+        TestConfig.selectCloudProfitSendByOrderno=ConfigFile.getUrl(InterFaceName.selectCloudProfitSendByOrderno);
+        TestConfig.checkProfitSendOld=ConfigFile.getUrl(InterFaceName.checkProfitSendOld);
         TestConfig.client=new DefaultHttpClient();
+        TestConfig.houTaiToken=GetHouTaiToken.getToken();
+        //后台操作,先登录后台拿到登录token
         this.orderno="cix20091510003045";
         this.coins="btc";
         client = new PostHttpClient();
     }
-    @Test(groups = {"tianJiaShouYi"})
+    @Test(groups = {"tianJiaShouYi"},description = "后台添加收益")
     public void addShouYi() throws IOException, ParseException, InterruptedException {
-
         //当前日期减一天
         Date date1 = getTimeZhuang(new Date(), -2);
         Date date= getTimeZhuang(new Date(), -1);

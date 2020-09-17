@@ -25,14 +25,19 @@ public class TestConfig {
     public static String selectCloudOrderDetail;
     public static String selectCloudProfitList;
     public static String selectCloudOrderPayFenList;
-    public static String token="10f74b71-5fa4-47c3-9446-ceaadb8db895";
+    public static String houtaiselectCloudOrderPayList;
+    public static String houtaicheckCloudOrderPay;
+    public static String adminLogin;
+    public static String token="711f7c35-0448-4b07-92b5-713579df8267";
     public static String userid="115079";
     public static String houTaiaddBulkProfitSendOld;
     public static String userGoogleSeceret="O3D3XTYAUPHVQR5N";
-    public static String houTaiToken="9a884aa5-7852-45a4-8c4d-43149254d37e";
+    public static String houTaiToken;
     public static String houTaiLoginnum="www123456";
     public static String selectCloudProfitSendByOrderno;
     public static String checkProfitSendOld;
+    //商城购买及续费使用支付方式
+    public static String cloudpayid="2";
 
 
 }

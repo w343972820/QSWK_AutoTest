@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="qswk">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.19">
+<dataSource name="qswkNeiWang">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.18">
     <root id="1">
       <ServerVersion>5.7.27</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -786,32 +786,18 @@
     </collation>
     <user id="247" parent="1" name="goku3role">
       <Host>%</Host>
-      <ObjectGrants>ALL PRIVILEGES|test:null
-ALL PRIVILEGES|cmsdata:null
-</ObjectGrants>
     </user>
     <user id="248" parent="1" name="mysql.session">
       <Host>localhost</Host>
-      <ObjectGrants>SUPER
-SELECT|performance_schema:null
-SELECT|mysql.user:null
-</ObjectGrants>
     </user>
     <user id="249" parent="1" name="mysql.sys">
       <Host>localhost</Host>
-      <ObjectGrants>TRIGGER|sys:null
-SELECT|sys.sys_config:null
-</ObjectGrants>
     </user>
     <user id="250" parent="1" name="root">
       <Host>%</Host>
-      <ObjectGrants>ALL PRIVILEGES!
-</ObjectGrants>
     </user>
     <user id="251" parent="1" name="root">
       <Host>localhost</Host>
-      <ObjectGrants>ALL PRIVILEGES!
-</ObjectGrants>
     </user>
     <table id="252" parent="23" name="role_user"/>
     <table id="253" parent="23" name="rolecoin">
@@ -824,19 +810,23 @@ SELECT|sys.sys_config:null
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="256" parent="252" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="257" parent="252" name="password">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="258" parent="252" name="isRegister">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <key id="259" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -848,13 +838,15 @@ SELECT|sys.sys_config:null
       <Comment>主键id</Comment>
       <DataType>int(9) unsigned|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="261" parent="253" name="userid">
       <Position>2</Position>
       <Comment>用户的id</Comment>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="262" parent="253" name="cointype">
       <Position>3</Position>
@@ -862,16 +854,19 @@ SELECT|sys.sys_config:null
       <DataType>int(9) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="263" parent="253" name="coinnum">
       <Position>4</Position>
       <Comment>币的数量</Comment>
       <DataType>decimal(36,18 digit) unsigned|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="264" parent="253" name="transacoinnum">
       <Position>5</Position>
       <Comment>可交易数量</Comment>
       <DataType>decimal(36,18 digit) unsigned|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <key id="265" parent="253" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -883,13 +878,15 @@ SELECT|sys.sys_config:null
       <Comment>主键id</Comment>
       <DataType>int(9) unsigned|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="267" parent="254" name="userid">
       <Position>2</Position>
       <Comment>用户的id</Comment>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="268" parent="254" name="cointype">
       <Position>3</Position>
@@ -897,16 +894,19 @@ SELECT|sys.sys_config:null
       <DataType>int(9) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>1</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="269" parent="254" name="coinnum">
       <Position>4</Position>
       <Comment>币的数量</Comment>
       <DataType>decimal(36,18 digit) unsigned|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <column id="270" parent="254" name="transacoinnum">
       <Position>5</Position>
       <Comment>可交易数量</Comment>
       <DataType>decimal(36,18 digit) unsigned|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
     </column>
     <key id="271" parent="254" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

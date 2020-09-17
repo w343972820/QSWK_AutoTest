@@ -20,9 +20,6 @@ import java.util.List;
 @Log4j2
 public class Books {
     private PostHttpClient client;
-    public String cloudpayid="2";
-
-
     @BeforeClass
     public void beforeTest() throws IOException {
         TestConfig.selectCloudShopDetailUrl= ConfigFile.getUrl(InterFaceName.selectCloudShopDetail);
@@ -43,6 +40,10 @@ public class Books {
             //拿到订单信息后，查询个人钱包余额及支付方式是不是匹配,如果不匹配也去下单查看接口返回，先下个没钱单，在下个有钱单
             JSONObject infoJson=JSONObject.parseObject(resultCode);
             String code = infoJson.getString("code");
+            if (!code.equals("1000")){
+                Reporter.log("订单页数据请求出错返回:"+resultCode);
+                System.out.println("订单页数据请求出错返回:"+resultCode);
+            }
             Reporter.log("订单页数据请求,响应 1000 即测试成功,否则测试失败.");
             Assert.assertEquals("1000",code);
             //拿pointName来判断是什么套餐，根据不能套餐买不同天数电费
@@ -65,7 +66,10 @@ public class Books {
             String returnBookInfo = goBook(shopGoods.get(number).getShopno(), buynum, buyday);
             infoJson=JSONObject.parseObject(returnBookInfo);
             code = infoJson.getString("code");
-            Reporter.log("下单数据请求,响应 1000 即测试成功,否则测试失败.");
+            if (!code.equals("1000")){
+                Reporter.log("下单出错返回:"+returnBookInfo);
+                System.out.println("下单出错返回:"+returnBookInfo);
+            }
             Assert.assertEquals("1000",code);
             //下完单得确认
             dataJson=infoJson.getJSONObject("data");
@@ -73,6 +77,10 @@ public class Books {
             String alreadPayResult = client.goSure(payno,TestConfig.userAlreadyPay);
             infoJson=JSONObject.parseObject(alreadPayResult);
             code = infoJson.getString("code");
+            if (!code.equals("1000")){
+                Reporter.log("确认付费出错返回:"+alreadPayResult);
+                System.out.println("确认付费出错返回:"+alreadPayResult);
+            }
             Reporter.log("确认付费数据请求,响应 1000 即测试成功,否则测试失败.");
             Assert.assertEquals("1000",code);
             Thread.sleep(50);
@@ -83,7 +91,7 @@ public class Books {
         JSONObject param=new JSONObject();
         param.put("shopno",shopno);
         param.put("buynum",buynum);
-        param.put("cloudpayid",cloudpayid);
+        param.put("cloudpayid",TestConfig.cloudpayid);
         param.put("buyday",buyday);
         param.put("userid",TestConfig.userid);
         param.put("languagetype","1");
