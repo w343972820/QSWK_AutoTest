@@ -19,9 +19,6 @@ import java.util.ArrayList;
 public class HouTaiShengHe {
     private PostHttpClient client;
     private ArrayList<String> paynos;
-    //首先拿到登录后台token
-    //在去获取审核订单列表,拿到需要审核的商品订单号
-    //通过订单号审核成功
     @BeforeClass
     public void beforeTest() throws IOException {
         TestConfig.houtaiselectCloudOrderPayList=ConfigFile.getUrl(InterFaceName.houtaiselectCloudOrderPayList);
@@ -54,8 +51,7 @@ public class HouTaiShengHe {
         JSONObject dataJson=resultsJson.getJSONObject("data");
         JSONArray listArray=dataJson.getJSONArray("list");
         for (int i = 0; i <listArray.size() ; i++) {
-            JSONObject siginJson=JSONObject.parseObject(listArray.get(i).toString());
-            paynos.add(siginJson.getString("payno"));
+            JSONObject siginJson=JSONObject.parseObject(listArray.get(i).toString());           paynos.add(siginJson.getString("payno"));
         }
     }
     @Test(dependsOnGroups = "shenHeLieBiao",description = "去审核订单")

@@ -36,6 +36,11 @@ public class Books {
     public void getBookdsInfor() throws IOException, InterruptedException {
         List<ShopGoods> shopGoods = TestConfig.sqlSession.selectList("com.vico.dao.ShopGoodsDao.vicoqueryAll");
         for (int number=0;number<shopGoods.size();number++){
+            int type = shopGoods.get(number).getType();
+            if (type==2){
+                //如果type类型为2的话套餐已售罄
+                continue;
+            }
             String resultCode = getBookdsInfore(shopGoods.get(number).getShopno());
             //拿到订单信息后，查询个人钱包余额及支付方式是不是匹配,如果不匹配也去下单查看接口返回，先下个没钱单，在下个有钱单
             JSONObject infoJson=JSONObject.parseObject(resultCode);

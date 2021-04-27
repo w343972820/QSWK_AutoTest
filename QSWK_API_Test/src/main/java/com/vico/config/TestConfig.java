@@ -28,8 +28,11 @@ public class TestConfig {
     public static String houtaiselectCloudOrderPayList;
     public static String houtaicheckCloudOrderPay;
     public static String adminLogin;
-    public static String token="711f7c35-0448-4b07-92b5-713579df8267";
-    public static String userid="115079";
+    public static String getCloudBulkMouthData;
+    public static String addCloudBulkMouth;
+    //个人算力前端token
+    public static String token="31cd4527-e31f-4d98-bf42-aac18c4e287f";
+    public static String userid="54";
     public static String houTaiaddBulkProfitSendOld;
     public static String userGoogleSeceret="O3D3XTYAUPHVQR5N";
     public static String houTaiToken;

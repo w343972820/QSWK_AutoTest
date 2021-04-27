@@ -53,28 +53,22 @@ public class CommonInterFaceCases {
     @Test(enabled = true)
     public void CloudPackagelist() throws IOException {
         //工具类中获取btc/eth套餐数据,用于预估收益
-        String coin="ETH";
+        String coin="BTC";
         String resultCode = getCloudPackagelist(coin);
         JSONObject resultJson=JSONObject.parseObject(resultCode);
         String code = resultJson.getString("code");
         Reporter.log("工具栏请求商品参数"+coin+",响应 1000 即测试成功,否则测试失败.");
         Assert.assertEquals("1000",code);
-        JSONArray dataJsonArray = resultJson.getJSONArray("data");
-        JSONObject calcListJson;
-        JSONArray calcArray;
-        for(int i=0;i<dataJsonArray.size();i++){
-            calcListJson=JSONObject.parseObject(dataJsonArray.get(i).toString());
-            calcArray = calcListJson.getJSONArray("calcList");
-            if (calcArray.size()>0){
-                for(int j=0;j<calcArray.size();j++){
-                    System.out.println(calcArray.get(j));
-                }
-            }
-        }
+
     }
     @Test
     public void selectCloudMinerParam() throws IOException {
-        String coin="BTC";
+        String coin="ETH";
+        writeSqlBook(coin,true);
+        coin="BTC";
+        writeSqlBook(coin,false);
+    }
+    private void writeSqlBook(String coin,boolean isDeleteSql) throws IOException {
         String resultCode = selectCloudMinerParamList(coin);
         JSONObject resultJson=JSONObject.parseObject(resultCode);
         String code = resultJson.getString("code");
@@ -91,6 +85,7 @@ public class CommonInterFaceCases {
         for(int i=0;i<dataJsonArray.size();i++){
             //拿到每个商品shopno,buynum(最低购买数),supnum(最大购买数量),cycleday(购买天数),cloundpayids(支持的支付方式),eachtnum(每T算力费),dayelec(每T每天电费)
             calcListJson = JSONObject.parseObject(dataJsonArray.get(i).toString());
+            System.out.println(calcListJson);
             calcArray =calcListJson.getJSONArray("listshop");
             for(int j=0;j<calcArray.size();j++){
                 goodsJson=JSONObject.parseObject(calcArray.get(j).toString());
@@ -103,6 +98,7 @@ public class CommonInterFaceCases {
                 goods.setBuynum(goodsJson.getString("buynum"));
                 goods.setCycleday(goodsJson.getString("cycleday"));
                 goods.setPackagename(goodsJson.getString("packagename"));
+                goods.setType(goodsJson.getInteger("type"));
                 shopGoods.add(goods);
                 goods=null;
             }
@@ -110,8 +106,10 @@ public class CommonInterFaceCases {
         Reporter.log("商品数："+shopGoods.size());
         System.out.println("商品数："+shopGoods.size());
         //将所有商品存入数据库
-        TestConfig.sqlSession.delete("com.vico.dao.ShopGoodsDao.deleteAll");
-        TestConfig.sqlSession.commit();
+        if (isDeleteSql){
+            TestConfig.sqlSession.delete("com.vico.dao.ShopGoodsDao.deleteAll");
+            TestConfig.sqlSession.commit();
+        }
         for(int i=0;i<shopGoods.size();i++){
             System.out.println(shopGoods.get(i));
             TestConfig.sqlSession.insert("com.vico.dao.ShopGoodsDao.insert",shopGoods.get(i));
@@ -119,7 +117,6 @@ public class CommonInterFaceCases {
         }
         TestConfig.sqlSession.commit();
     }
-
     private String selectCloudMinerParamList(String coin) throws IOException {
         JSONObject param=new JSONObject();
         param.put("page","1");

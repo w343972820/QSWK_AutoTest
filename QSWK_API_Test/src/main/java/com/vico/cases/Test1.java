@@ -1,19 +1,30 @@
 package com.vico.cases;
 
-import com.vico.config.InterFaceName;
-import com.vico.config.TestConfig;
-import com.vico.service.ConfigFile;
+
+
+import lombok.extern.log4j.Log4j2;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+@Log4j2
 public class Test1 {
     @Test
     public void test1(){
-        TestConfig.houTaiaddBulkProfitSendOld=ConfigFile.getUrl(InterFaceName.houTaiaddBulkProfitSendOld);
-        TestConfig.selectCloudProfitSendByOrderno=ConfigFile.getUrl(InterFaceName.selectCloudProfitSendByOrderno);
-        TestConfig.checkProfitSendOld=ConfigFile.getUrl(InterFaceName.checkProfitSendOld);
-        System.out.println(TestConfig.houTaiaddBulkProfitSendOld);
-        System.out.println(TestConfig.selectCloudProfitSendByOrderno);
-        System.out.println(TestConfig.checkProfitSendOld);
+
+        String url=  "https://m.cngold.org/quote/gjs/yhzhj_jh9999.html";
+        try {
+            Document doc = Jsoup.connect(url).get();
+            log.info(doc.body());
+            System.out.println(doc.body());
+
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
     }
 
 }

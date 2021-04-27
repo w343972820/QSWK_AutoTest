@@ -34,6 +34,7 @@ public class ShopGoods implements Serializable {
     private String dayelec;
 
     private String packagename;
+    private int type;
 
 
 }

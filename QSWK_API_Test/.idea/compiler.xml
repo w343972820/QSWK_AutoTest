@@ -5,7 +5,7 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="QSWK_API_Test" target="1.5" />
+      <module name="QSWK_API_Test" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

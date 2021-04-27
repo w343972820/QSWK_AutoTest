@@ -1,0 +1,316 @@
+2021-01-12 11:22:28.838 INFO  [main] com.vico.cases.CommonInterFaceCases.writeSqlBook():116 - insert: ShopGoods(id=305, shopno=5a9d2341a5e2443bb509cf31673bbc50, buynum=15, supnum=600, cycleday=1080, cloundpayids=2,5, eachtnum=110.000000000000000000, dayelec=0.400000000000000000, packagename=保本套餐, type=1)
+2021-01-12 11:22:29.017 INFO  [main] com.vico.cases.CommonInterFaceCases.writeSqlBook():116 - insert: ShopGoods(id=306, shopno=a4ce600af0c94564a72e72e04bbf1127, buynum=10, supnum=600, cycleday=360, cloundpayids=2,5, eachtnum=360.000000000000000000, dayelec=0E-18, packagename=包年套餐, type=1)
+2021-01-12 11:22:29.019 INFO  [main] com.vico.cases.CommonInterFaceCases.writeSqlBook():116 - insert: ShopGoods(id=307, shopno=c49a11eb8b934847bbefecf5b9eabbaf, buynum=10, supnum=400, cycleday=1080, cloundpayids=2,5, eachtnum=300.000000000000000000, dayelec=0.350000000000000000, packagename=保本套餐, type=1)
+2021-01-12 11:22:29.021 INFO  [main] com.vico.cases.CommonInterFaceCases.writeSqlBook():116 - insert: ShopGoods(id=308, shopno=caec8301859f4920aedb828a8eb17cd9, buynum=10, supnum=0, cycleday=360, cloundpayids=2,5, eachtnum=350.000000000000000000, dayelec=0E-18, packagename=包年套餐, type=2)
+2021-01-12 11:22:34.361 INFO  [main] com.vico.cases.Books.getBookdsInfore():120 - 下单页返回：{
+  "code" : "1000",
+  "data" : {
+    "shopno" : "5a9d2341a5e2443bb509cf31673bbc50",
+    "cointypename" : "ETH",
+    "minertype" : "ETH矿机",
+    "minertypeen" : "The ETH mill",
+    "buynum" : 15,
+    "subnum" : 600,
+    "cycleday" : 1080,
+    "shopname" : "保本套餐+1080天+600T+ETH",
+    "capacity" : 1050.000000000000000000,
+    "power" : 210.000000000000000000,
+    "packagename" : "保本套餐",
+    "packagenameen" : "Capital Guaranteed",
+    "rule" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/ruleFiles/1604309903936大宗算力套餐.pdf",
+    "eachtnum" : 110.000000000000000000,
+    "dayelec" : 0.400000000000000000,
+    "mentnum" : 1,
+    "mentfee" : "0",
+    "mentfeenow" : "0",
+    "coinprice" : "34346.40",
+    "usdtcny" : "6.3969",
+    "cloudpay" : "钱包余额,钱包余额",
+    "pointname" : "buhi",
+    "cloudpayList" : [ {
+      "id" : 2,
+      "company" : null,
+      "openbank" : null,
+      "bankno" : null,
+      "banktype" : null,
+      "cointypename" : "BTC",
+      "image" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596097505478微信图片_20200730162431.png",
+      "isenable" : 1,
+      "remark" : "",
+      "type" : 5,
+      "createtime" : 1596097706000,
+      "updatetime" : null
+    }, {
+      "id" : 5,
+      "company" : null,
+      "openbank" : null,
+      "bankno" : null,
+      "banktype" : null,
+      "cointypename" : "USDT-OMNI",
+      "image" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596100822479微信图片_20200730162442.png",
+      "isenable" : 1,
+      "remark" : "",
+      "type" : 5,
+      "createtime" : 1596100810000,
+      "updatetime" : null
+    } ],
+    "coinNum" : {
+      "btc" : "10.00000000",
+      "usdt-omni" : "0"
+    },
+    "coinPriceList" : {
+      "btc" : "34519.0",
+      "usdt" : "0.9992",
+      "usdtcny" : "6.3969"
+    },
+    "listticket" : [ ],
+    "ffps" : "0.00006990",
+    "energy" : 4.000000000000000000
+  }
+}
+2021-01-12 11:22:34.362 INFO  [main] com.vico.cases.Books.goBook():106 - 下单参数：{"buyday":"1080","cloudpayid":"2","buynum":"15","source":"1","shopno":"5a9d2341a5e2443bb509cf31673bbc50","userid":"115117","languagetype":"1","token":"e5cd5d1b-dfa5-42c5-8216-a56152f6d17f"}
+2021-01-12 11:22:34.401 INFO  [main] com.vico.cases.Books.goBook():108 - 下单返回：{"code":"1000","data":{"cloudpay":"5","cloup":{"cointypename":"BTC","createtime":1596097706000,"id":2,"image":"https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596097505478微信图片_20200730162431.png","isenable":1,"remark":"","type":5},"coinprice":"34519.0","createtime":1610421753218,"orderno":"buhi21011210004259","payamount":"1650.00","payno":"P21011210004261","paynum":"0.00747233","shopno":"5a9d2341a5e2443bb509cf31673bbc50","usdtcny":"6.3969"}}
+2021-01-12 11:22:34.440 INFO  [main] com.vico.service.PostHttpClient.goSure():38 - 确认支付返回：{
+  "code" : "1000",
+  "data" : "操作成功"
+}
+2021-01-12 11:22:34.517 INFO  [main] com.vico.cases.Books.getBookdsInfore():120 - 下单页返回：{
+  "code" : "1000",
+  "data" : {
+    "shopno" : "a4ce600af0c94564a72e72e04bbf1127",
+    "cointypename" : "BTC",
+    "minertype" : "神马m20s",
+    "minertypeen" : "Whatsminer",
+    "buynum" : 10,
+    "subnum" : 600,
+    "cycleday" : 360,
+    "shopname" : "包年套餐+360天+600T+BTC",
+    "capacity" : 3264.000000000000000000,
+    "power" : 68.000000000000000000,
+    "packagename" : "包年套餐",
+    "packagenameen" : "Year-round Electricity Coverd",
+    "rule" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/ruleFiles/15949886537103、QSWK包年套餐云算力服务协议 V1.0 .pdf",
+    "eachtnum" : 360.000000000000000000,
+    "dayelec" : 0E-18,
+    "mentnum" : 1,
+    "mentfee" : "0",
+    "mentfeenow" : "0",
+    "coinprice" : "34346.40",
+    "usdtcny" : "6.3969",
+    "cloudpay" : "钱包余额,钱包余额",
+    "pointname" : "yf1",
+    "cloudpayList" : [ {
+      "id" : 2,
+      "company" : null,
+      "openbank" : null,
+      "bankno" : null,
+      "banktype" : null,
+      "cointypename" : "BTC",
+      "image" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596097505478微信图片_20200730162431.png",
+      "isenable" : 1,
+      "remark" : "",
+      "type" : 5,
+      "createtime" : 1596097706000,
+      "updatetime" : null
+    }, {
+      "id" : 5,
+      "company" : null,
+      "openbank" : null,
+      "bankno" : null,
+      "banktype" : null,
+      "cointypename" : "USDT-OMNI",
+      "image" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596100822479微信图片_20200730162442.png",
+      "isenable" : 1,
+      "remark" : "",
+      "type" : 5,
+      "createtime" : 1596100810000,
+      "updatetime" : null
+    } ],
+    "coinNum" : {
+      "btc" : "9.99252767",
+      "usdt-omni" : "0"
+    },
+    "coinPriceList" : {
+      "btc" : "34519.0",
+      "usdt" : "0.9992",
+      "usdtcny" : "6.3969"
+    },
+    "listticket" : [ ],
+    "ffps" : "0.00000696",
+    "energy" : 48.000000000000000000
+  }
+}
+2021-01-12 11:22:34.517 INFO  [main] com.vico.cases.Books.goBook():106 - 下单参数：{"buyday":"360","cloudpayid":"2","buynum":"10","source":"1","shopno":"a4ce600af0c94564a72e72e04bbf1127","userid":"115117","languagetype":"1","token":"e5cd5d1b-dfa5-42c5-8216-a56152f6d17f"}
+2021-01-12 11:22:34.555 INFO  [main] com.vico.cases.Books.goBook():108 - 下单返回：{"code":"1000","data":{"cloudpay":"5","cloup":{"cointypename":"BTC","createtime":1596097706000,"id":2,"image":"https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596097505478微信图片_20200730162431.png","isenable":1,"remark":"","type":5},"coinprice":"34519.0","createtime":1610421753372,"orderno":"yf121011210004263","payamount":"3600.00","payno":"P21011210004265","paynum":"0.01630327","shopno":"a4ce600af0c94564a72e72e04bbf1127","usdtcny":"6.3969"}}
+2021-01-12 11:22:34.597 INFO  [main] com.vico.service.PostHttpClient.goSure():38 - 确认支付返回：{
+  "code" : "1000",
+  "data" : "操作成功"
+}
+2021-01-12 11:22:34.669 INFO  [main] com.vico.cases.Books.getBookdsInfore():120 - 下单页返回：{
+  "code" : "1000",
+  "data" : {
+    "shopno" : "c49a11eb8b934847bbefecf5b9eabbaf",
+    "cointypename" : "BTC",
+    "minertype" : "神马m20s",
+    "minertypeen" : "Whatsminer",
+    "buynum" : 10,
+    "subnum" : 400,
+    "cycleday" : 1080,
+    "shopname" : "保本套餐+1080天+500T+BTC",
+    "capacity" : 3264.000000000000000000,
+    "power" : 68.000000000000000000,
+    "packagename" : "保本套餐",
+    "packagenameen" : "Capital Guaranteed",
+    "rule" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/ruleFiles/1604309903936大宗算力套餐.pdf",
+    "eachtnum" : 300.000000000000000000,
+    "dayelec" : 0.350000000000000000,
+    "mentnum" : 1,
+    "mentfee" : "0",
+    "mentfeenow" : "0",
+    "coinprice" : "34346.40",
+    "usdtcny" : "6.3969",
+    "cloudpay" : "钱包余额,钱包余额",
+    "pointname" : "buhi",
+    "cloudpayList" : [ {
+      "id" : 2,
+      "company" : null,
+      "openbank" : null,
+      "bankno" : null,
+      "banktype" : null,
+      "cointypename" : "BTC",
+      "image" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596097505478微信图片_20200730162431.png",
+      "isenable" : 1,
+      "remark" : "",
+      "type" : 5,
+      "createtime" : 1596097706000,
+      "updatetime" : null
+    }, {
+      "id" : 5,
+      "company" : null,
+      "openbank" : null,
+      "bankno" : null,
+      "banktype" : null,
+      "cointypename" : "USDT-OMNI",
+      "image" : "https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596100822479微信图片_20200730162442.png",
+      "isenable" : 1,
+      "remark" : "",
+      "type" : 5,
+      "createtime" : 1596100810000,
+      "updatetime" : null
+    } ],
+    "coinNum" : {
+      "btc" : "9.97622440",
+      "usdt-omni" : "0"
+    },
+    "coinPriceList" : {
+      "btc" : "34519.0",
+      "usdt" : "0.9992",
+      "usdtcny" : "6.3969"
+    },
+    "listticket" : [ ],
+    "ffps" : "0.00000696",
+    "energy" : 48.000000000000000000
+  }
+}
+2021-01-12 11:22:34.671 INFO  [main] com.vico.cases.Books.goBook():106 - 下单参数：{"buyday":"1080","cloudpayid":"2","buynum":"10","source":"1","shopno":"c49a11eb8b934847bbefecf5b9eabbaf","userid":"115117","languagetype":"1","token":"e5cd5d1b-dfa5-42c5-8216-a56152f6d17f"}
+2021-01-12 11:22:34.705 INFO  [main] com.vico.cases.Books.goBook():108 - 下单返回：{"code":"1000","data":{"cloudpay":"5","cloup":{"cointypename":"BTC","createtime":1596097706000,"id":2,"image":"https://yunsuanli.oss-cn-shenzhen.aliyuncs.com/currencyCoin/1596097505478微信图片_20200730162431.png","isenable":1,"remark":"","type":5},"coinprice":"34519.0","createtime":1610421753528,"orderno":"buhi21011210004267","payamount":"3000.00","payno":"P21011210004269","paynum":"0.01358605","shopno":"c49a11eb8b934847bbefecf5b9eabbaf","usdtcny":"6.3969"}}
+2021-01-12 11:22:34.741 INFO  [main] com.vico.service.PostHttpClient.goSure():38 - 确认支付返回：{
+  "code" : "1000",
+  "data" : "操作成功"
+}
+2021-01-12 11:22:34.859 INFO  [main] com.vico.cases.MyOrderCases.getMyOrder():166 - 请求算力套餐：{
+  "code" : "1000",
+  "data" : {
+    "count" : 3,
+    "list" : [ {
+      "shopno" : "c49a11eb8b934847bbefecf5b9eabbaf",
+      "orderno" : "buhi21011210004267",
+      "payno" : "P21011210004269",
+      "amout" : "3000",
+      "paytype" : 5,
+      "stagenum" : 1,
+      "type" : 6,
+      "createtime" : 1610421754000,
+      "cointypename" : "BTC",
+      "buynum" : 10,
+      "name" : "保本套餐",
+      "packagenameen" : "Capital Guaranteed",
+      "minertype" : "神马m20s",
+      "minertypeen" : "Whatsminer",
+      "checktotal" : null,
+      "stageday" : 1080,
+      "cycleday" : 1080,
+      "shopname" : "保本套餐+1080天+500T+BTC",
+      "pointname" : "buhi",
+      "paystages" : "1"
+    }, {
+      "shopno" : "a4ce600af0c94564a72e72e04bbf1127",
+      "orderno" : "yf121011210004263",
+      "payno" : "P21011210004265",
+      "amout" : "3600",
+      "paytype" : 5,
+      "stagenum" : 1,
+      "type" : 6,
+      "createtime" : 1610421753000,
+      "cointypename" : "BTC",
+      "buynum" : 10,
+      "name" : "包年套餐",
+      "packagenameen" : "Year-round Electricity Coverd",
+      "minertype" : "神马m20s",
+      "minertypeen" : "Whatsminer",
+      "checktotal" : null,
+      "stageday" : 360,
+      "cycleday" : 360,
+      "shopname" : "包年套餐+360天+600T+BTC",
+      "pointname" : "yf1",
+      "paystages" : "1"
+    }, {
+      "shopno" : "5a9d2341a5e2443bb509cf31673bbc50",
+      "orderno" : "buhi21011210004259",
+      "payno" : "P21011210004261",
+      "amout" : "1650",
+      "paytype" : 5,
+      "stagenum" : 1,
+      "type" : 6,
+      "createtime" : 1610421753000,
+      "cointypename" : "ETH",
+      "buynum" : 15,
+      "name" : "保本套餐",
+      "packagenameen" : "Capital Guaranteed",
+      "minertype" : "ETH矿机",
+      "minertypeen" : "The ETH mill",
+      "checktotal" : null,
+      "stageday" : 1080,
+      "cycleday" : 1080,
+      "shopname" : "保本套餐+1080天+600T+ETH",
+      "pointname" : "buhi",
+      "paystages" : "1"
+    } ]
+  }
+}
+2021-01-12 11:22:35.025 INFO  [main] com.vico.cases.MyOrderCases.getMyOrder():166 - 请求算力套餐：{
+  "code" : "1000",
+  "data" : {
+    "count" : 0,
+    "list" : [ ]
+  }
+}
+2021-01-12 11:22:35.057 INFO  [main] com.vico.cases.MyOrderCases.chanChuAndFuFeiJiLu():112 - 付费记录：{
+  "code" : "2013",
+  "msg" : "请求频繁"
+}
+2021-01-12 11:22:35.057 INFO  [main] com.vico.cases.MyOrderCases.chanChuAndFuFeiJiLu():113 - 产出记录：{
+  "code" : "1000",
+  "data" : {
+    "count" : 0,
+    "list" : [ ]
+  }
+}
+2021-01-12 11:22:35.070 INFO  [main] com.vico.cases.MyOrderCases.orderInfo():70 - 请求订单详情：{
+  "code" : "2013",
+  "msg" : "请求频繁"
+}
+2021-01-12 11:22:35.079 INFO  [main] com.vico.cases.MyOrderCases.suanLiGuanLi():89 - 请求算力管理：{
+  "code" : "2013",
+  "msg" : "请求频繁"
+}

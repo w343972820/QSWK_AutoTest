@@ -15,6 +15,7 @@ public class PostHttpClient {
         HttpPost post = new HttpPost(url);
         //设置请求头信息 设置header
         post.setHeader("content-type","application/json");
+
         //将参数信息添加到参数中去
         StringEntity entity=new StringEntity(param.toString(),"utf-8");
         post.setEntity(entity);
